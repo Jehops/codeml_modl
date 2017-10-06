@@ -1,0 +1,10 @@
+** codeml_modl, codeml with modified likelihood patches
+   =codeml_modl= includes likelihood modification to restore statistical regularity to likelihood ratio tests for positive selection [1].  This implementation works with the nested models M1a/M2a.
+
+** Installation
+On systems with BSD make, simply run =make=.  On systems with GNU make, such as GNU/Linux and OS X run =make -f Makefile.gnu=.  Install the resulting executable, =codeml_modl=, wherever you like, although you probably want it somewhere in your executable path.
+
+** Usage
+Include =mod_loglikC = 2= in the codeml control file.  We have found =2= works well, but any value larger than =0= may be used.
+
+[1] Yang, Ziheng. "PAML 4: phylogenetic analysis by maximum likelihood." Molecular biology and evolution 24.8 (2007): 1586-1591.
