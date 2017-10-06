@@ -1,4 +1,4 @@
-** codeml_modl, codeml with modified likelihood patches
+** =codeml_modl=, codeml with modified likelihood patches
    =codeml_modl= includes likelihood modification to restore statistical regularity to likelihood ratio tests for positive selection [1].  This implementation works with the nested models M1a/M2a.
 
 ** Installation
