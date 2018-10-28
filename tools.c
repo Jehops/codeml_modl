@@ -5772,8 +5772,11 @@ extern double mod_loglikC;
 double (*mod_loglikf)(double x[], int n);
 double mod_loglik(double x[], int n) {
    /* only set up for NSsites = 2 (M2a model) */
-   double pplus;
-   pplus = 1.0/(1.0+exp(x[n-3])); // p(w_+)/[p(w_+)+p_1]
+   double pplus = 1.0/(1.0+exp(x[n-3]));
+   // p1 = e^(x1) / [1 + e^(x0) + e^(x1)]
+   // p2 = 1      / [1 + e^(x0) + e^(x1)]
+   // pplus, the penalty is p2/[p1+p2]
+   // simplifying gives pplus = 1/[1.0 + e^(p1)]
    return(mod_loglikf(x,n)-mod_loglikC*log(pplus));
 }
 
